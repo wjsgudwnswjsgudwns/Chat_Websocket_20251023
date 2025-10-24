@@ -6,7 +6,7 @@ plugins {
 
 group = 'com.jhj'
 version = '0.0.1-SNAPSHOT'
-description = '채팅 웹 소켓'
+description = 'websocket을 활용한 chat app'
 
 java {
 	toolchain {

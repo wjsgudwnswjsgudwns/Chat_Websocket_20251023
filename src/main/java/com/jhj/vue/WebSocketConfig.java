@@ -8,20 +8,19 @@ import org.springframework.web.socket.config.annotation.WebSocketHandlerRegistry
 
 @Configuration
 @EnableWebSocket
-public abstract class WebSocketConfig implements WebSocketConfigurer{
-
+public class WebSocketConfig implements WebSocketConfigurer {
+	
 	@Autowired
 	private ChatHandler chatHandler;
 	
-	//WebSocket 핸들러 등록 메소드
+	//WebSocket 핸들러 등록 메서드
 	@Override
 	public void registerWebSocketHandlers(WebSocketHandlerRegistry registry) {
 		registry.addHandler(chatHandler, "/ws/chat")
-			.setAllowedOrigins("*")
-			.setAllowedOriginPatterns("*"); // 모든 도메인(*)에서 들어오는 요청 허용
-		
+		.setAllowedOrigins("*"); //모든 도메인(*)에서 들어오는 요청 허용
 		
 	}
-
+	
+	
 	
 }
